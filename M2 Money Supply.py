@@ -44,3 +44,18 @@ plt.twinx().plot(data['S&P500'], label='S&P500', color='green')
 plt.title('M2 Money Supply vs S&P 500')
 plt.legend(loc='upper left')
 plt.show()
+
+# performing correlation analysis on a data
+correlation = data['M2_supply'].pct_change().corr(data['S&P500'].pct_change())
+print(f"Correlation between M2 Money Supply and S&P 500: {correlation:.2f}")
+
+# regression analysis M2 vs SP500
+m2_change = data['M2_supply'].pct_change().dropna()
+sp500_change = data['S&P500'].pct_change().dropna()
+
+# data for regression analysis
+aligned_data = pd.concat([m2_change, sp500_change], axis=1).dropna()
+slope, intercept, r_value, p_value, std_err = linregress(aligned_data['M2_Supply'], 
+                                                         aligned_data['S&P500'])
+
+
