@@ -36,3 +36,11 @@ data.columns = ['M2_Supply', 'S&P500']
 
 # dropping any Nan values, if any (missing values in dataset)
 data = data.dropna()
+
+# plotting data trend visualisation
+plt.figure(figsize=(10, 6))
+plt.plot(data['M2_supply'], label='M2 Money Supply', color='blue')
+plt.twinx().plot(data['S&P500'], label='S&P500', color='green')
+plt.title('M2 Money Supply vs S&P 500')
+plt.legend(loc='upper left')
+plt.show()
