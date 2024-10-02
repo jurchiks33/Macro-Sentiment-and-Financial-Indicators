@@ -27,3 +27,12 @@ sp500 = get_stock_data('^GSPC', start_date, end_date)
 # resampling M2 and S&P 500 data to a monthly frequency and we merge them.
 m2_monthly = m2.resample('M').last()
 sp500_monthly = sp500.resample('M').last()
+
+# data set merging into a single dataframe.
+data = pd.merge(m2_monthly, sp500_monthly, left_index=True, right_index=True)
+
+# renaming columns for clarity
+data.columns = ['M2_Supply', 'S&P500']
+
+# dropping any Nan values, if any (missing values in dataset)
+data = data.dropna()
