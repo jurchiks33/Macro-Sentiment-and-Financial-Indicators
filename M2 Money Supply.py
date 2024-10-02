@@ -39,18 +39,18 @@ data = data.dropna()
 
 # plotting data trend visualisation
 plt.figure(figsize=(10, 6))
-plt.plot(data['M2_supply'], label='M2 Money Supply', color='blue')
+plt.plot(data['M2_Supply'], label='M2 Money Supply', color='blue')
 plt.twinx().plot(data['S&P500'], label='S&P500', color='green')
 plt.title('M2 Money Supply vs S&P 500')
 plt.legend(loc='upper left')
 plt.show()
 
 # performing correlation analysis on a data
-correlation = data['M2_supply'].pct_change().corr(data['S&P500'].pct_change())
+correlation = data['M2_Supply'].pct_change().corr(data['S&P500'].pct_change())
 print(f"Correlation between M2 Money Supply and S&P 500: {correlation:.2f}")
 
 # regression analysis M2 vs SP500
-m2_change = data['M2_supply'].pct_change().dropna()
+m2_change = data['M2_Supply'].pct_change().dropna()
 sp500_change = data['S&P500'].pct_change().dropna()
 
 # data for regression analysis
@@ -58,4 +58,16 @@ aligned_data = pd.concat([m2_change, sp500_change], axis=1).dropna()
 slope, intercept, r_value, p_value, std_err = linregress(aligned_data['M2_Supply'], 
                                                          aligned_data['S&P500'])
 
+print(f"Linear Regression Slope: {slope}")
+print(f"R-squared: {r_value**2:.2f}")
+print(f"P-value: {p_value:.4f}")
+
+# test signal if M2 increases more than 2% monthly
+data['M2_pct_change'] = data['M2_Supply'].pct_change()
+
+# creating signal when M2 > 2%
+data['Signal'] = data['M2_pct_change'].apply(lambda x: 1 if x > 0.02 else 0)
+
+#display data frame with signal
+print(data.tail())
 
