@@ -22,4 +22,16 @@ def scrape_ism_report():
         print(f"failed to get ISM repor. Status Code: {response.status_code}")
         return None
     
+    # parsing HTML content with BeautifulSoup
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    # harcoding column names
+    index_names = [
+        "Manufacturing PMI", "New Orders",
+        "Production", "Supplier Deliveries",
+        "Inventories", "Customer's Inventories",
+        "Prices", "Baclog of Orders",
+        "New Export Orders", "Imports"
+    ]
+
     
