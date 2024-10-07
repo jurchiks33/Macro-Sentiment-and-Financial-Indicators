@@ -41,5 +41,23 @@ def scrape_ism_report():
         'Series Index Aug': []  # data before last one
     }
 
+    # table with ism data
+    table = soup.find('table')
+
+    # rows for the table
+    rows = table.find_all('tr')
+
+    for i, row in enumerate(rows[1:]):
+        cols = row.find_all('td')
+
+        # extracting first two data columns
+        sep_value = convert_to_float(cols[0].get_text(strip=True))
+        aug_value = convert_to_float(cols[1].get_text(strip=True))
+
+        # Append numeric values and skip non numerical ones
+        if sep_value is not None and aug_value is not None:
+            data['Series Index Sep'].append(sep_value)
+            data['Series Index Aug'].append(aug_value)
     
+    return pd.DataFrame(data)
 
