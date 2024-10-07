@@ -16,5 +16,30 @@ end_date = '2024-09-09'
 dgs10, dgs2 = get_yield_data(start_date, end_date)
 
 # data merging into a single data frame
-data = pd.merge(dgs10, dgs2, left_index=True, right_index=True, how='inner')
+data = pd.merge(dgs10, 
+                dgs2, 
+                left_index=True, 
+                right_index=True, 
+                how='inner')
 data.columns = ['10_Year', '2_Year']
+
+# calculating yield curve spread
+data['Yield_Spread'] = data['10_Year'] - data['2_Year']
+
+#Plotting the yield curve spread (10year - 2year)
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, 
+         data['Yield_Spread'], 
+         label='10-Year Minus 2-Year Yield Curve Spread', 
+         color='blue')
+plt.axhline(0, 
+            color='red', 
+            linestyle='--', 
+            label='Inversion Treshold(Zero)')
+plt.title('US Treasury 10-Year vs 2-Year Yield Curve Spread')
+plt.xlabel('Date')
+plt.ylabel('Yield Spread (%)')
+plt.legend(loc='best')
+plt.grid(True)
+
+plt.show()
