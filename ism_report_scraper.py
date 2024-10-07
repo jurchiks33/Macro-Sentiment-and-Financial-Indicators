@@ -34,4 +34,12 @@ def scrape_ism_report():
         "New Export Orders", "Imports"
     ]
 
+    # preparing dictionary to store extracted data
+    data = {
+        'index': index_names,
+        'Series Index Sep': [], # latest data
+        'Series Index Aug': []  # data before last one
+    }
+
     
+
