@@ -61,3 +61,4 @@ def scrape_ism_report():
     
     return pd.DataFrame(data)
 
+# function to display table
