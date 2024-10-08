@@ -62,3 +62,23 @@ def scrape_ism_report():
     return pd.DataFrame(data)
 
 # function to display table
+def display_ism_report(df):
+    fig, ax = plt.subplot(figsize=(10, 6))
+
+    # hide axis
+    ax.xaxis.set_visible(False)
+    ax.yaxis.set_visible(False)
+    ax.set_frame_on(False)
+
+    #creating table
+    table = ax.table(cellText=df.values,
+                     colLabels=df.columns,
+                     cellLoc='center',
+                     loc='center')
+    
+    #formatting table
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.scale(1.2, 1.2)
+
+    
