@@ -35,4 +35,26 @@ def plot_umcsi(df):
                 linestyle='--', 
                 label='95 Mark')  # Horizontal line at 95
     
+        # Plot aesthetics
+    plt.title('University of Michigan Consumer Sentiment Index (UMCSI)', fontsize=14)
+    plt.xlabel('Date')
+    plt.ylabel('Consumer Sentiment Index')
+    plt.grid(True)
+    plt.legend(loc='best')
+    plt.tight_layout()
+    plt.show()
+
+# Main function to fetch data and plot it
+def main():
+    # Fetch UMCSI data from FRED
+    df = fetch_umcsi_data()
     
+    if df is not None:
+        # Plot the UMCSI chart with horizontal lines
+        plot_umcsi(df)
+
+# Run the main function
+if __name__ == "__main__":
+    main()
+    
+   
