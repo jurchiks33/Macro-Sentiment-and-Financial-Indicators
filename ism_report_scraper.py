@@ -81,4 +81,12 @@ def display_ism_report(df):
     table.set_fontsize(10)
     table.scale(1.2, 1.2)
 
+    # display the table
+    plt.title('ISM Report - Business Growth (September)',
+              fontsize=14,
+              fontweight='bold')
+    plt.tight_layout()
+    plt.show()
+
+    # function to run the scraper and display the data
     
