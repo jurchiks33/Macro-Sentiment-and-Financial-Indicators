@@ -19,3 +19,20 @@ def fetch_umcsi_data():
     
     return df
 
+# Function to plot UMCSI data with only the UMCSI line and horizontal lines
+def plot_umcsi(df):
+    # Plot the Consumer Sentiment Index as a line chart
+    plt.figure(figsize=(10, 6))
+    plt.plot(df.index, df['Sentiment'], label='UMCSI', color='green', linewidth=2)
+    
+    # Plot horizontal lines at 75 and 95
+    plt.axhline(y=75, 
+                color='black', 
+                linestyle='--', 
+                label='75 Mark')  # Horizontal line at 75
+    plt.axhline(y=95, 
+                color='black', 
+                linestyle='--', 
+                label='95 Mark')  # Horizontal line at 95
+    
+    
