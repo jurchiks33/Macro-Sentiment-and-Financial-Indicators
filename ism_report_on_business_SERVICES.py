@@ -18,4 +18,13 @@ def scrape_ism_services_report():
     # send request to fetch the page content
     response = requests.get(url)
 
+    # check if request was successful
+    if response.status_code != 200:
+        print(f"Failed to retrieve ISM Service report. Status code: {response.status_code}")
+        return None
+    
+    # parsing HTML content with BeautifulSoup
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+
     
