@@ -36,4 +36,11 @@ index_names = {
     "Inventory Sentiment", "Customers Inventories"
 }
 
+# preparing dictionary for extracted data
+data = {
+    'index': index_names,
+    'Series Index Sep': [],
+    'Series Index Aug': [],
+}
+
 
