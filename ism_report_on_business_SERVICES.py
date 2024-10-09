@@ -26,5 +26,14 @@ def scrape_ism_services_report():
     # parsing HTML content with BeautifulSoup
     soup = BeautifulSoup(response.content, 'html.parser')
 
+# Hardcode index column names for ISM services
+index_names = {
+    "Services PMI", "Business Activity/Production",
+    "New Orders", "Employment",
+    "Supplier Deliveries", "Inventories",
+    "Prices", "Backlog of Orders",
+    "New Export Orders", "Imports",
+    "Inventory Sentiment", "Customers Inventories"
+}
 
-    
+
