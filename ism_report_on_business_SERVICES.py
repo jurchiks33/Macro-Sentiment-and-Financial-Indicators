@@ -43,4 +43,10 @@ data = {
     'Series Index Aug': [],
 }
 
+# extracting table with ISM data
+table = soup.find('table')
+
+# extracting rows from the table
+rows = table.find_all('tr')
+
 
