@@ -74,3 +74,44 @@ def scrape_ism_services_report():
     data['Series Index Aug'] = data['Series Index Aug'][1:] + [np.nan]
 
     return pd.DataFrame(data)
+
+# Function to display the table
+def display_ism_services_report(df):
+    # Plotting the table
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # Hide axes
+    ax.xaxis.set_visible(False)
+    ax.yaxis.set_visible(False)
+    ax.set_frame_on(False)
+
+    # Create a table
+    table = ax.table(cellText=df.values, 
+                     colLabels=df.columns, 
+                     cellLoc='center', 
+                     loc='center')
+
+    # Format the table
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.scale(1.2, 1.2) 
+
+    # Display the table
+    plt.title('ISM Report - Services Growth (September)', 
+              fontsize=14, 
+              fontweight='bold')
+    plt.tight_layout()
+    plt.show()
+
+# Main function to run the scraper and display the data
+def main():
+    # Scrape the ISM Services report data
+    df = scrape_ism_services_report()
+    
+    if df is not None:
+        # Display the data as a table
+        display_ism_services_report(df)
+
+# Run the main function
+if __name__ == "__main__":
+    main()
