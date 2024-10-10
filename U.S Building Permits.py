@@ -34,3 +34,13 @@ def plot_building_permits(df):
     plt.legend(loc='best')
     plt.tight_layout()
     plt.show()
+
+# main function for a data fetching
+def main():
+    df = fetch_building_permits_data()
+
+    if df is not None:
+        plot_building_permits(df)
+
+if __name__ == "__main__":
+    main()
