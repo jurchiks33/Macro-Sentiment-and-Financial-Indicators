@@ -26,14 +26,14 @@ def plot_umcsi(df):
     plt.plot(df.index, df['Sentiment'], label='UMCSI', color='green', linewidth=2)
     
     # Plot horizontal lines at 75 and 95
-    plt.axhline(y=75, 
-                color='black', 
+    plt.axhline(y=70, 
+                color='red', 
                 linestyle='--', 
-                label='75 Mark')  # Horizontal line at 75
-    plt.axhline(y=95, 
-                color='black', 
+                label='70 and below Mark, Bearish')  # Horizontal line at 70
+    plt.axhline(y=80, 
+                color='green', 
                 linestyle='--', 
-                label='95 Mark')  # Horizontal line at 95
+                label='80 and above Mark, Bullish')  # Horizontal line at 80
     
         # Plot aesthetics
     plt.title('University of Michigan Consumer Sentiment Index (UMCSI)', fontsize=14)
