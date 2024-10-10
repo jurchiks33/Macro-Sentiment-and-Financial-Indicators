@@ -27,3 +27,27 @@ def display_ism_services_report():
     clear_canvas()
     ism_report_on_business_SERVICES.main()
 
+# function to display ISM manufacturing report
+def display_ism_manufacturing_report():
+    clear_canvas()
+    ism_report_scraper.main()
+
+# Function to display University of Michigan Sentiment Index
+def display_umcsi():
+    clear_canvas()
+    umsci_scrapper.main()
+
+# Function to display VIX Analysis
+def display_vix_analysis():
+    clear_canvas()
+    vix_analysis.main()
+
+# Function to display Benchmark Yield
+def display_benchmark_yield():
+    clear_canvas()
+    Benchmark_Yield_US.main()
+
+# Function to clear the canvas area for new plots
+def clear_canvas():
+    for widget in right_frame.winfo_children():
+        widget.destroy()
