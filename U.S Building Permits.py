@@ -4,11 +4,11 @@ import pandas as pd
 
 # function to get U.S. building permits from FRED
 def fetch_building_permits_data():
-    series_id = "Permit"
+    series_id = "PERMIT"
 
     # defining start and end data for our dataset
     start_date = '1980-01-01'
-    end_date = pd.to_datetime('today').strftime('%Y_%m_d')
+    end_date = pd.to_datetime('today').strftime('%Y-%m-%d')
 
     #getting data from FRED
     df = web.DataReader(series_id, 'fred', start_date, end_date)
