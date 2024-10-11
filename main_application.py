@@ -51,3 +51,16 @@ def display_benchmark_yield():
 def clear_canvas():
     for widget in right_frame.winfo_children():
         widget.destroy()
+
+# creating main application window
+root = tk.Tk()
+root.title("Financial Data Dashboard")
+
+# frame for buttons
+left_frame = tk.Frame(root, width=200, bg='lightgray')
+left_frame.pack(side=tk.LEFT, fill=tk.Y)
+
+# frame for a data display
+right_frame = tk.Frame(root, bg='white')
+right_frame.pack(side=tk.RIGHT, expand=True, fill=tk.BOTH)
+
