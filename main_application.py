@@ -64,3 +64,19 @@ left_frame.pack(side=tk.LEFT, fill=tk.Y)
 right_frame = tk.Frame(root, bg='white')
 right_frame.pack(side=tk.RIGHT, expand=True, fill=tk.BOTH)
 
+# buttons for the left frame
+btn_m2_money = tk.Button(left_frame, 
+                         text="M2 Money Supply",
+                         command=display_m2_money_supply)
+btn_m2_money.pack(pady=10, padx=10)
+
+btn_m2_money = tk.Button(left_frame, 
+                         text="M2 Money Supply",
+                         command=display_m2_money_supply)
+btn_m2_money.pack(pady=10, padx=10)
+
+btn_us_buildings = tk.Button(left_frame, 
+                             text="U.S. Building Permits",
+                             command=display_us_buildings_permits)
+btn_us_buildings.pack(pady=10, padx=10)
+
