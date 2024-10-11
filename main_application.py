@@ -90,3 +90,20 @@ btn_ism_services = tk.Button(left_frame,
                              command=display_ism_services_report)
 btn_ism_services.pack(pady=10, padx=10)
 
+btn_umsci = tk.Button(left_frame,
+                      text="U. of Michigan Sentiment Index", 
+                      command=display_umcsi)
+btn_umsci.pack(pady=10, padx=10)
+
+btn_vix_analysis = tk.Button(left_frame, 
+                             text="VIX Analysis", 
+                             command=display_vix_analysis)
+btn_vix_analysis.pack(pady=10, padx=10)
+
+btn_benchmark_yield = tk.Button(left_frame, 
+                                text="Benchmark Yield", 
+                                command=display_benchmark_yield)
+btn_benchmark_yield.pack(pady=10, padx=10)
+
+# starting main loop
+root.mainloop()
