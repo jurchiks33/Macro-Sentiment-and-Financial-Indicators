@@ -80,3 +80,13 @@ btn_us_buildings = tk.Button(left_frame,
                              command=display_us_buildings_permits)
 btn_us_buildings.pack(pady=10, padx=10)
 
+btn_ism_manufacturing = tk.Button(left_frame,
+                                  text="ISM Report - Manufacturing", 
+                                  command=display_ism_manufacturing_report)
+btn_ism_manufacturing.pack(pady=10, padx=10)
+
+btn_ism_services = tk.Button(left_frame,
+                             text="ISM Report - Services",
+                             command=display_ism_services_report)
+btn_ism_services.pack(pady=10, padx=10)
+
