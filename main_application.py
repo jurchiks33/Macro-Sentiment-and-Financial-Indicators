@@ -70,11 +70,6 @@ btn_m2_money = tk.Button(left_frame,
                          command=display_m2_money_supply)
 btn_m2_money.pack(pady=10, padx=10)
 
-btn_m2_money = tk.Button(left_frame, 
-                         text="M2 Money Supply",
-                         command=display_m2_money_supply)
-btn_m2_money.pack(pady=10, padx=10)
-
 btn_us_buildings = tk.Button(left_frame, 
                              text="U.S. Building Permits",
                              command=display_us_buildings_permits)
