@@ -36,3 +36,23 @@ def analyze_sp500_and_building_permits():
     plt.plot(sp500_ma, label='S&P 500 (1-month MA)', color='blue')
     plt.plot(permits_ma, label='Building Permits (1-month MA)', color='green')
 
+    # Plot the average of the two curves as a red line
+    plt.plot(avg_curve, label='Average (S&P 500 & Building Permits)', color='red')
+
+    plt.title('S&P 500 and U.S. Building Permits - 1-Month Moving Averages')
+    plt.xlabel('Date')
+    plt.ylabel('Value')
+    plt.legend(loc='best')
+    plt.grid(True)
+    plt.tight_layout()
+
+    # Show the plot
+    plt.show()
+
+# Main function to be called from the main application
+def main():
+    analyze_sp500_and_building_permits()
+
+# If running this script standalone, execute main function
+if __name__ == "__main__":
+    main()
