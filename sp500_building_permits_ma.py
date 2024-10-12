@@ -27,3 +27,12 @@ def analyze_sp500_and_building_permits():
     sp500_ma = sp500_data.resample('M').last().rolling(window=1).mean()
     permits_ma = permits_data.resample('M').last().rolling(window=1).mean()
 
+    # Calculate the average of the two curves
+    avg_curve = (sp500_ma + permits_ma.squeeze()) / 2  # Squeeze to align dimensions
+
+    # Plot S&P 500 and Building Permits Moving Averages
+    plt.figure(figsize=(10, 6))
+
+    plt.plot(sp500_ma, label='S&P 500 (1-month MA)', color='blue')
+    plt.plot(permits_ma, label='Building Permits (1-month MA)', color='green')
+
