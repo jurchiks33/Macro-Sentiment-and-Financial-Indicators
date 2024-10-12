@@ -11,6 +11,7 @@ import M2_Money_Supply
 import us_building_permits
 import umsci_scrapper
 import vix_analysis
+import sp500_building_permits_ma
 
 # function to display M2 Money Supply vs Stock Market Analysis
 def display_m2_money_supply():
@@ -99,6 +100,9 @@ btn_benchmark_yield = tk.Button(left_frame,
                                 text="Benchmark Yield", 
                                 command=display_benchmark_yield)
 btn_benchmark_yield.pack(pady=10, padx=10)
+
+btn_sp500_permits_ma = tk.Button(left_frame, 
+                                 text="SP500 & Building Permits MA")
 
 # starting main loop
 root.mainloop()
