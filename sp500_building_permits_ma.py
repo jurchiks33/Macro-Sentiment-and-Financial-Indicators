@@ -19,3 +19,11 @@ def analyze_sp500_and_building_permits():
     start_date = '1980-01-01'
     end_date = '2024-09-09'
 
+    # Fetch S&P 500 and Building Permits data
+    sp500_data = get_sp500_data(start_date, end_date)
+    permits_data = get_building_permits_data(start_date, end_date)
+
+    # Resample data to monthly frequency and calculate 1-month moving average
+    sp500_ma = sp500_data.resample('M').last().rolling(window=1).mean()
+    permits_ma = permits_data.resample('M').last().rolling(window=1).mean()
+
