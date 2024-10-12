@@ -13,3 +13,9 @@ def get_building_permits_data(start, end):
     permits_data = web.DataReader('PERMIT', 'fred', start, end)
     return permits_data
 
+# Function to calculate and plot the moving averages for S&P 500 and Building Permits
+def analyze_sp500_and_building_permits():
+    # Define the time range
+    start_date = '1980-01-01'
+    end_date = '2024-09-09'
+
