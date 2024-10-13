@@ -101,8 +101,10 @@ btn_benchmark_yield = tk.Button(left_frame,
                                 command=display_benchmark_yield)
 btn_benchmark_yield.pack(pady=10, padx=10)
 
-btn_sp500_permits_ma = tk.Button(left_frame, 
-                                 text="SP500 & Building Permits MA")
+btn_sp500_permits_pct = tk.Button(left_frame, 
+                                 text="SP500 & Building Permits MA",
+                                 command=lambda: sp500_building_permits_ma.main())
+btn_sp500_permits_pct.pack(pady=10, padx=10)
 
 # starting main loop
 root.mainloop()
