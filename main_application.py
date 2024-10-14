@@ -78,42 +78,50 @@ button_style = {
 # buttons for the left frame
 btn_m2_money = tk.Button(left_frame, 
                          text="M2 Money Supply",
-                         command=display_m2_money_supply)
+                         command=display_m2_money_supply,
+                         **button_style)
 btn_m2_money.pack(pady=10, padx=10)
 
 btn_us_buildings = tk.Button(left_frame, 
                              text="U.S. Building Permits",
-                             command=display_us_buildings_permits)
+                             command=display_us_buildings_permits,
+                             **button_style)
 btn_us_buildings.pack(pady=10, padx=10)
 
 btn_ism_manufacturing = tk.Button(left_frame,
                                   text="ISM Report - Manufacturing", 
-                                  command=display_ism_manufacturing_report)
+                                  command=display_ism_manufacturing_report,
+                                  **button_style)
 btn_ism_manufacturing.pack(pady=10, padx=10)
 
 btn_ism_services = tk.Button(left_frame,
                              text="ISM Report - Services",
-                             command=display_ism_services_report)
+                             command=display_ism_services_report,
+                             **button_style)
 btn_ism_services.pack(pady=10, padx=10)
 
 btn_umsci = tk.Button(left_frame,
                       text="U. of Michigan Sentiment Index", 
-                      command=display_umcsi)
+                      command=display_umcsi,
+                      **button_style)
 btn_umsci.pack(pady=10, padx=10)
 
 btn_vix_analysis = tk.Button(left_frame, 
                              text="VIX Analysis", 
-                             command=display_vix_analysis)
+                             command=display_vix_analysis,
+                             **button_style)
 btn_vix_analysis.pack(pady=10, padx=10)
 
 btn_benchmark_yield = tk.Button(left_frame, 
                                 text="Benchmark Yield", 
-                                command=display_benchmark_yield)
+                                command=display_benchmark_yield,
+                                **button_style)
 btn_benchmark_yield.pack(pady=10, padx=10)
 
 btn_sp500_permits_pct = tk.Button(left_frame, 
                                  text="SP500 & Building Permits MA",
-                                 command=lambda: sp500_building_permits_ma.main())
+                                 command=lambda: sp500_building_permits_ma.main(),
+                                 **button_style)
 btn_sp500_permits_pct.pack(pady=10, padx=10)
 
 # starting main loop
