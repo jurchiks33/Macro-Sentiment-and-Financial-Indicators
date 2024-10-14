@@ -65,6 +65,16 @@ left_frame.pack(side=tk.LEFT, fill=tk.Y)
 right_frame = tk.Frame(root, bg='white')
 right_frame.pack(side=tk.RIGHT, expand=True, fill=tk.BOTH)
 
+# button styling
+button_style = {
+    'font': ('Arial', 12),
+    'width': 25,        # for all buttons to have same width
+    'bg': 'lightblue',  # background for buttons
+    'fg': 'black',      # text color
+    'activatebackground': 'blue',   # background on button press
+    'activateforeground': 'white'   # text color on button press
+}
+
 # buttons for the left frame
 btn_m2_money = tk.Button(left_frame, 
                          text="M2 Money Supply",
