@@ -69,10 +69,10 @@ right_frame.pack(side=tk.RIGHT, expand=True, fill=tk.BOTH)
 button_style = {
     'font': ('Arial', 12),
     'width': 25,        # for all buttons to have same width
-    'bg': 'lightblue',  # background for buttons
+    'bg': 'lightgrey',  # background for buttons
     'fg': 'black',      # text color
-    'activatebackground': 'blue',   # background on button press
-    'activateforeground': 'white'   # text color on button press
+    'activebackground': 'grey',   # background on button press
+    'activeforeground': 'white'   # text color on button press
 }
 
 # buttons for the left frame
