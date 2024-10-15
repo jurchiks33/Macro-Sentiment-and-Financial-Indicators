@@ -18,7 +18,7 @@ def get_stock_data(ticker, start, end):
 def analyze_m2_money_supply():
     # Define the date range
     start_date = '2000-01-01'
-    end_date = '2024-09-09'
+    end_date = pd.to_datetime('today').strftime('%Y-%m-%d')  # Set end date as today's date
 
     # Get M2 money supply data
     m2 = get_m2_data(start_date, end_date)

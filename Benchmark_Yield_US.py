@@ -12,7 +12,8 @@ def get_yield_data(start, end):
 def analyze_yield_curve():
     # Define the time range for data retrieval
     start_date = '2000-01-01'
-    end_date = '2024-09-09'
+    end_date = pd.to_datetime('today').strftime('%Y-%m-%d')  # Set end date as today's date
+
 
     # Get 10-year and 2-year yield data
     dgs10, dgs2 = get_yield_data(start_date, end_date)

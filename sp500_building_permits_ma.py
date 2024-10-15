@@ -17,7 +17,7 @@ def get_building_permits_data(start, end):
 def analyze_sp500_and_building_permits():
     # Define the time range
     start_date = '1980-01-01'
-    end_date = '2024-09-09'
+    end_date = pd.to_datetime('today').strftime('%Y-%m-%d')  # Set end date as today's date
 
     # Fetch S&P 500 and Building Permits data
     sp500_data = get_sp500_data(start_date, end_date)

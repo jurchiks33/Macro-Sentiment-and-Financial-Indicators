@@ -1,5 +1,6 @@
 import yfinance as yf
 import matplotlib.pyplot as plt
+import pandas as pd
 
 # Function to fetch VIX (Volatility Index) data
 def get_vix_data(start, end):
@@ -9,8 +10,8 @@ def get_vix_data(start, end):
 # Function to analyze and plot VIX data
 def analyze_vix():
     # Define the time range for VIX data retrieval
-    start_date = '2000-01-01'
-    end_date = '2024-09-09'
+    start_date = '2010-01-01'
+    end_date = pd.to_datetime('today').strftime('%Y-%m-%d')  # Set end date as today's date
 
     # Retrieve the VIX data
     vix_data = get_vix_data(start_date, end_date)
