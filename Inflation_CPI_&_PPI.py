@@ -29,4 +29,13 @@ def analyze_inflation():
     plt.legend(loc='best')
     plt.grid(True)
 
+    plt.tight_layout()
+    plt.show()
+
+    # call function from main application
+    def main():
+        analyze_inflation()
     
+    # for standalone running function
+    if __name__ == "__main__":
+        main()
