@@ -124,5 +124,10 @@ btn_sp500_permits_pct = tk.Button(left_frame,
                                  **button_style)
 btn_sp500_permits_pct.pack(pady=10, padx=10)
 
+btn_inflation = tk.Button(left_frame, 
+                          text="Inflation:CPI & PPI",
+                          command=lambda: Inflation_CPI_&_PPI.main(),
+                          **button_style)
+
 # starting main loop
 root.mainloop()
