@@ -17,4 +17,10 @@ def analyze_inflation():
     # getting CPI and PPI data
     cpi_data, ppi_data = get_inflation_data(start_date, end_date)
 
-    
+    # plotting data
+    plt.figure(figsize=(10, 6))
+
+    plt.plot(cpi_data, label='CPI (Consumer Price Index)', color='blue')
+    plt.plot(ppi_data, label='PPI (Producer Price Index)', color='green')
+
+    plt.title('CPI vs PPI')
