@@ -24,3 +24,9 @@ def analyze_inflation():
     plt.plot(ppi_data, label='PPI (Producer Price Index)', color='green')
 
     plt.title('CPI vs PPI')
+    plt.xlabel('Date')
+    plt.ylabel('Index Value')
+    plt.legend(loc='best')
+    plt.grid(True)
+
+    
