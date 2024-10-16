@@ -8,3 +8,13 @@ def get_inflation_data(start, end):
     ppi_data = web.DataReader('PPIACO', 'fred', start, end)
     return cpi_data, ppi_data
 
+# function to analyze and plot CPI and PPI data
+def analyze_inflation():
+    # time range
+    start_date = '2000-01-01'
+    end_date = pd.to_datetime('today').strftime('%Y-%m-%d')
+
+    # getting CPI and PPI data
+    cpi_data, ppi_data = get_inflation_data(start_date, end_date)
+
+    
