@@ -12,7 +12,7 @@ import us_building_permits
 import umsci_scrapper
 import vix_analysis
 import sp500_building_permits_ma
-import Inflation_CPI_&_PPI
+import Inflation_CPI_and_PPI
 
 # function to display M2 Money Supply vs Stock Market Analysis
 def display_m2_money_supply():
@@ -52,7 +52,7 @@ def display_benchmark_yield():
 # function for inflation CPI and PPI display
 def display_inflation_cpi_ppi():
     clear_canvas()
-    Inflation_CPI_&_PPI.main()
+    Inflation_CPI_and_PPI.main()
 
 # Function to clear the canvas area for new plots
 def clear_canvas():
@@ -132,8 +132,9 @@ btn_sp500_permits_pct.pack(pady=10, padx=10)
 
 btn_inflation = tk.Button(left_frame, 
                           text="Inflation:CPI & PPI",
-                          command=lambda: Inflation_CPI_&_PPI.main(),
+                          command=lambda: Inflation_CPI_and_PPI.main(),
                           **button_style)
+btn_inflation.pack(pady=10, padx=10)
 
 # starting main loop
 root.mainloop()
