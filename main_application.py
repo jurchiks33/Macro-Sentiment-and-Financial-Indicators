@@ -12,6 +12,7 @@ import us_building_permits
 import umsci_scrapper
 import vix_analysis
 import sp500_building_permits_ma
+import Inflation_CPI_&_PPI
 
 # function to display M2 Money Supply vs Stock Market Analysis
 def display_m2_money_supply():
@@ -47,6 +48,11 @@ def display_vix_analysis():
 def display_benchmark_yield():
     clear_canvas()
     Benchmark_Yield_US.main()
+
+# function for inflation CPI and PPI display
+def display_inflation_cpi_ppi():
+    clear_canvas()
+    Inflation_CPI_&_PPI.main()
 
 # Function to clear the canvas area for new plots
 def clear_canvas():
