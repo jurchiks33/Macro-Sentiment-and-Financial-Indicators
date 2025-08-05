@@ -12,7 +12,7 @@ def get_m2_data(start, end):
 # Function to get stock market data (S&P 500)
 def get_stock_data(ticker, start, end):
     stock_data = yf.download(ticker, start=start, end=end)
-    return stock_data['Adj Close']
+    return stock_data['Close']
 
 # Function to perform M2 money supply analysis
 def analyze_m2_money_supply():
